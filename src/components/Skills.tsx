@@ -3,7 +3,7 @@ import { useLanguage } from '../context/LanguageContext'
 
 export default function Skills() {
   const { ref: headerRef, className: headerClass } = useScrollReveal()
-  const { language } = useLanguage()
+  const { t } = useLanguage()
 
   const skillCategories = [
     {
@@ -19,7 +19,7 @@ export default function Skills() {
         </svg>
       ),
       bgColor: 'rgba(var(--primary-rgb),.14)',
-      title: { en: 'Frontend', th: 'ฟรอนต์เอนด์' },
+      titleKey: 'skills.categories.frontend',
       skills: ['React', 'TypeScript', 'JavaScript', 'Tailwind CSS'],
     },
     {
@@ -34,7 +34,7 @@ export default function Skills() {
         </svg>
       ),
       bgColor: 'rgba(168,218,220,.35)',
-      title: { en: 'Backend', th: 'แบ็กเอนด์' },
+      titleKey: 'skills.categories.backend',
       skills: ['NestJS', 'Node.js', 'FastAPI', 'REST API'],
     },
     {
@@ -50,7 +50,7 @@ export default function Skills() {
         </svg>
       ),
       bgColor: 'rgba(255,214,165,.4)',
-      title: { en: 'Database', th: 'ฐานข้อมูล' },
+      titleKey: 'skills.categories.database',
       skills: ['PostgreSQL', 'SQLite', 'Firebase'],
     },
     {
@@ -66,7 +66,7 @@ export default function Skills() {
         </svg>
       ),
       bgColor: 'rgba(168,230,207,.4)',
-      title: { en: 'Mobile', th: 'โมบาย' },
+      titleKey: 'skills.categories.mobile',
       skills: ['Flutter', 'Dart', 'React Native'],
     },
     {
@@ -82,7 +82,7 @@ export default function Skills() {
         </svg>
       ),
       bgColor: 'rgba(255,170,165,.28)',
-      title: { en: 'DevOps', th: 'ดีฟอปส์' },
+      titleKey: 'skills.categories.devops',
       skills: ['Git', 'CI/CD', 'Docker'],
     },
     {
@@ -97,7 +97,7 @@ export default function Skills() {
         </svg>
       ),
       bgColor: 'rgba(var(--primary-rgb),.14)',
-      title: { en: 'Tools', th: 'เครื่องมือ' },
+      titleKey: 'skills.categories.tools',
       skills: ['VS Code', 'Figma', 'Postman'],
     },
   ]
@@ -107,17 +107,13 @@ export default function Skills() {
       <div className="container">
         <div className={`section-head ${headerClass}`} ref={headerRef}>
           <span className="eyebrow">
-            {language === 'th' ? 'ทักษะ' : 'Skills'}
+            {t('skills.eyebrow')}
           </span>
           <h2>
-            {language === 'th'
-              ? 'เครื่องมือที่ใช้สร้างผลิตภัณฑ์'
-              : 'Tools I use to build products'}
+            {t('skills.title')}
           </h2>
           <p>
-            {language === 'th'
-              ? 'ชุดเครื่องมือที่ใช้งานได้จริง ตั้งแต่หน้าบ้าน หลังบ้าน แอปมือถือ ไปจนถึงเครื่องมือที่ใช้ในชีวิตประจำวัน'
-              : 'A practical toolkit spanning front-end interfaces to back-end services, mobile apps, and everyday tooling.'}
+            {t('skills.description')}
           </p>
         </div>
 
@@ -131,7 +127,7 @@ export default function Skills() {
               <div className="ic" style={{ background: category.bgColor }}>
                 {category.icon}
               </div>
-              <h3>{language === 'th' ? category.title.th : category.title.en}</h3>
+              <h3>{t(category.titleKey)}</h3>
               <div className="tag-list">
                 {category.skills.map((skill) => (
                   <span key={skill} className="tag">

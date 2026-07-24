@@ -6,7 +6,7 @@ export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('all')
   const { ref: headerRef, className: headerClass } = useScrollReveal()
   const { ref: filterRef, className: filterClass } = useScrollReveal()
-  const { language } = useLanguage()
+  const { t } = useLanguage()
 
   const projects = [
     {
@@ -24,11 +24,8 @@ export default function Projects() {
         </svg>
       ),
       bgGradient: 'linear-gradient(135deg,rgba(var(--primary-rgb),.25),rgba(168,218,220,.3))',
-      title: { en: 'Face Attendance Application', th: 'แอปเช็คชื่อด้วยใบหน้า' },
-      description: {
-        en: 'Real-time attendance tracking using facial recognition, with a live WebSocket feed and cloud sync.',
-        th: 'ระบบเช็คชื่อแบบเรียลไทม์ด้วยการจดจำใบหน้า พร้อมการอัปเดตผ่าน WebSocket และซิงก์ข้อมูลบนคลาวด์',
-      },
+      titleKey: 'projects.items.faceAttendance.title',
+      descriptionKey: 'projects.items.faceAttendance.description',
       stack: ['Flutter', 'FastAPI', 'PostgreSQL', 'WebSocket', 'Firebase'],
     },
     {
@@ -46,11 +43,8 @@ export default function Projects() {
         </svg>
       ),
       bgGradient: 'linear-gradient(135deg,rgba(168,230,207,.35),rgba(255,214,165,.3))',
-      title: { en: 'Transcript Checker Application', th: 'แอปตรวจสอบผลการเรียน' },
-      description: {
-        en: 'A mobile app that helps students validate their academic transcripts and track graduation requirements offline.',
-        th: 'แอปมือถือที่ช่วยให้นักศึกษาตรวจสอบผลการเรียนและติดตามเงื่อนไขการจบการศึกษาแบบออฟไลน์',
-      },
+      titleKey: 'projects.items.transcriptChecker.title',
+      descriptionKey: 'projects.items.transcriptChecker.description',
       stack: ['React Native', 'SQLite'],
     },
     {
@@ -68,20 +62,17 @@ export default function Projects() {
         </svg>
       ),
       bgGradient: 'linear-gradient(135deg,rgba(255,214,165,.35),rgba(var(--primary-rgb),.22))',
-      title: { en: 'Stock Price Prediction', th: 'ทำนายราคาหุ้น' },
-      description: {
-        en: 'A regression-based model that forecasts short-term stock price movement from historical market data.',
-        th: 'โมเดลถดถอยที่ใช้ทำนายแนวโน้มราคาหุ้นระยะสั้นจากข้อมูลตลาดย้อนหลัง',
-      },
+      titleKey: 'projects.items.stockPrediction.title',
+      descriptionKey: 'projects.items.stockPrediction.description',
       stack: ['Python', 'Regression Modeling', 'Pandas'],
     },
   ]
 
   const filters = [
-    { value: 'all', label: { en: 'All', th: 'ทั้งหมด' } },
-    { value: 'mobile', label: { en: 'Mobile', th: 'โมบาย' } },
-    { value: 'web', label: { en: 'Web', th: 'เว็บ' } },
-    { value: 'data', label: { en: 'Data / ML', th: 'ข้อมูล / ML' } },
+    { value: 'all', labelKey: 'projects.filters.all' },
+    { value: 'mobile', labelKey: 'projects.filters.mobile' },
+    { value: 'web', labelKey: 'projects.filters.web' },
+    { value: 'data', labelKey: 'projects.filters.data' },
   ]
 
   const filteredProjects =
@@ -94,17 +85,13 @@ export default function Projects() {
       <div className="container">
         <div className={`section-head ${headerClass}`} ref={headerRef}>
           <span className="eyebrow">
-            {language === 'th' ? 'ผลงานเด่น' : 'Featured Projects'}
+            {t('projects.eyebrow')}
           </span>
           <h2>
-            {language === 'th'
-              ? 'ผลงานที่สร้างขึ้นล่าสุด'
-              : 'Things I\'ve built recently'}
+            {t('projects.title')}
           </h2>
           <p>
-            {language === 'th'
-              ? 'ผลงานหลากหลายทั้งมือถือ เว็บ และงานด้านข้อมูล ตั้งแต่แนวคิดจนถึงซอฟต์แวร์ที่ใช้งานได้จริง'
-              : 'A mix of mobile, web, and data-driven projects — from concept to working software.'}
+            {t('projects.description')}
           </p>
         </div>
 
@@ -115,7 +102,7 @@ export default function Projects() {
               className={`filter-btn ${activeFilter === filter.value ? 'active' : ''}`}
               onClick={() => setActiveFilter(filter.value)}
             >
-              {language === 'th' ? filter.label.th : filter.label.en}
+              {t(filter.labelKey)}
             </button>
           ))}
         </div>
@@ -134,12 +121,8 @@ export default function Projects() {
                 {project.icon}
               </div>
               <div className="project-body">
-                <h3>{language === 'th' ? project.title.th : project.title.en}</h3>
-                <p>
-                  {language === 'th'
-                    ? project.description.th
-                    : project.description.en}
-                </p>
+                <h3>{t(project.titleKey)}</h3>
+                <p>{t(project.descriptionKey)}</p>
                 <div className="project-stack">
                   {project.stack.map((skill) => (
                     <span key={skill} className="tag">
@@ -160,9 +143,7 @@ export default function Projects() {
                     GitHub
                   </a>
                   <a href="#" className="btn btn-primary btn-sm">
-                    <span>
-                      {language === 'th' ? 'ดูตัวอย่าง' : 'Live Demo'}
-                    </span>
+                    <span>{t('projects.liveDemo')}</span>
                   </a>
                 </div>
               </div>

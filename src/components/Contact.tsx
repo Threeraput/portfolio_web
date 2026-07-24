@@ -3,15 +3,11 @@ import { useLanguage } from '../context/LanguageContext'
 
 export default function Contact() {
   const { ref, className } = useScrollReveal(true)
-  const { language } = useLanguage()
+  const { t } = useLanguage()
 
   const handleResumeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
-    alert(
-      language === 'th'
-        ? 'เพิ่มลิงค์เรซูเม่ PDF ของคุณที่นี่ (เช่น /resume.pdf) เพื่อเปิดใช้งานปุ่มนี้'
-        : 'Add your resume PDF link here (e.g. /resume.pdf) to enable this button.'
-    )
+    alert(t('contact.resumeAlert'))
   }
 
   return (
@@ -19,17 +15,13 @@ export default function Contact() {
       <div className="container">
         <div className={`contact-box ${className}`} ref={ref}>
           <span className="eyebrow">
-            {language === 'th' ? 'ติดต่อ' : 'Contact'}
+            {t('contact.eyebrow')}
           </span>
           <h2>
-            {language === 'th'
-              ? 'มาสร้างผลงานร่วมกัน'
-              : 'Let\'s build something together'}
+            {t('contact.title')}
           </h2>
           <p>
-            {language === 'th'
-              ? 'เปิดรับงานประจำและงานฟรีแลนซ์ ติดต่อได้เลยครับ ปกติผมตอบกลับภายในหนึ่งวัน'
-              : 'Open to full-time roles and freelance projects. Feel free to reach out — I usually reply within a day.'}
+            {t('contact.description')}
           </p>
           <div className="contact-links">
             <a href="mailto:your.email@example.com" className="contact-link">
@@ -80,7 +72,7 @@ export default function Contact() {
               >
                 <path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16" />
               </svg>
-              <span>{language === 'th' ? 'เรซูเม่' : 'Resume'}</span>
+              <span>{t('contact.resume')}</span>
             </a>
           </div>
         </div>

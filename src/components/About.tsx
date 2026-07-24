@@ -7,7 +7,7 @@ export default function About() {
   const { ref: titleRef, className: titleClass } = useScrollReveal()
   const { ref: p1Ref, className: p1Class } = useScrollReveal()
   const { ref: p2Ref, className: p2Class } = useScrollReveal()
-  const { language } = useLanguage()
+  const { t } = useLanguage()
 
   const infoCards = [
     {
@@ -23,8 +23,8 @@ export default function About() {
         </svg>
       ),
       bgColor: 'rgba(var(--primary-rgb),.14)',
-      title: { en: 'Computer Science', th: 'วิทยาการคอมพิวเตอร์' },
-      subtitle: { en: 'Kasetsart University', th: 'มหาวิทยาลัยเกษตรศาสตร์' },
+      titleKey: 'about.cards.education.title',
+      subtitleKey: 'about.cards.education.subtitle',
     },
     {
       icon: (
@@ -38,8 +38,8 @@ export default function About() {
         </svg>
       ),
       bgColor: 'rgba(168,218,220,.35)',
-      title: { en: 'Full Stack Developer', th: 'ฟูลสแตกดีเวลลอปเปอร์' },
-      subtitle: { en: 'Web & Mobile', th: 'เว็บและมือถือ' },
+      titleKey: 'about.cards.role.title',
+      subtitleKey: 'about.cards.role.subtitle',
     },
     {
       icon: (
@@ -54,8 +54,8 @@ export default function About() {
         </svg>
       ),
       bgColor: 'rgba(255,214,165,.4)',
-      title: { en: 'Thailand', th: 'ประเทศไทย' },
-      subtitle: { en: 'Based in Nakhon Pathom', th: 'พักอาศัยที่นครปฐม' },
+      titleKey: 'about.cards.location.title',
+      subtitleKey: 'about.cards.location.subtitle',
     },
     {
       icon: (
@@ -69,8 +69,8 @@ export default function About() {
         </svg>
       ),
       bgColor: 'rgba(168,230,207,.4)',
-      title: { en: 'Thai / English', th: 'ไทย / อังกฤษ' },
-      subtitle: { en: 'Professional working proficiency', th: 'ใช้งานได้ในระดับมืออาชีพ' },
+      titleKey: 'about.cards.language.title',
+      subtitleKey: 'about.cards.language.subtitle',
     },
   ]
 
@@ -83,13 +83,13 @@ export default function About() {
           </div>
           <div className="avatar-badge">
             <span className="dot"></span>
-            <span>{language === 'th' ? 'พร้อมทำงาน' : 'Open to work'}</span>
+            <span>{t('about.status')}</span>
           </div>
         </div>
 
         <div className="about-bio">
           <span className={`eyebrow ${eyebrowClass}`} ref={eyebrowRef}>
-            {language === 'th' ? 'เกี่ยวกับผม' : 'About Me'}
+            {t('about.eyebrow')}
           </span>
           <h2
             className={`${titleClass}`}
@@ -101,19 +101,13 @@ export default function About() {
               marginBottom: '18px',
             }}
           >
-            {language === 'th'
-              ? 'สร้างซอฟต์แวร์อย่างพิถีพิถัน ตั้งแต่ไอเดียจนถึงการใช้งานจริง'
-              : 'Building software with care, from idea to deployment'}
+            {t('about.title')}
           </h2>
           <p className={`${p1Class}`} ref={p1Ref}>
-            {language === 'th'
-              ? 'ผมเป็นบัณฑิตวิทยาการคอมพิวเตอร์จากมหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน มีประสบการณ์ด้านวิศวกรรมซอฟต์แวร์จากการฝึกงานแบบสหกิจศึกษา ชอบทำงานครบทุกส่วนของระบบ ทั้งออกแบบหน้าบ้านที่ใช้งานง่าย สร้าง API ที่เชื่อถือได้ และพัฒนาแอปมือถือที่ใช้งานได้จริง'
-              : 'I\'m a Computer Science graduate from Kasetsart University, Kamphaeng Saen Campus, with hands-on software engineering experience gained through cooperative education. I enjoy working across the stack — designing intuitive front-ends, building dependable APIs, and shipping mobile apps that people actually use.'}
+            {t('about.bio1')}
           </p>
           <p className={`${p2Class}`} ref={p2Ref}>
-            {language === 'th'
-              ? 'ผลงานล่าสุดของผมครอบคลุมระบบเช็คชื่อด้วยใบหน้าแบบเรียลไทม์ แอปตรวจสอบผลการเรียนบนมือถือ และโมเดลทำนายราคาหุ้นด้วยแมชชีนเลิร์นนิง แต่ละโปรเจกต์คือการเปลี่ยนโจทย์จริงให้กลายเป็นผลิตภัณฑ์ที่ใช้งานได้'
-              : 'My recent work spans a real-time face attendance system, a mobile transcript checker, and a machine-learning stock price prediction model — each one an exercise in turning a practical problem into a working product.'}
+            {t('about.bio2')}
           </p>
 
           <div className="info-cards stagger">
@@ -127,8 +121,8 @@ export default function About() {
                   {card.icon}
                 </div>
                 <div>
-                  <h4>{language === 'th' ? card.title.th : card.title.en}</h4>
-                  <span>{language === 'th' ? card.subtitle.th : card.subtitle.en}</span>
+                  <h4>{t(card.titleKey)}</h4>
+                  <span>{t(card.subtitleKey)}</span>
                 </div>
               </div>
             ))}

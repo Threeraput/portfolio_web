@@ -3,34 +3,22 @@ import { useLanguage } from '../context/LanguageContext'
 
 export default function Experience() {
   const { ref: headerRef, className: headerClass } = useScrollReveal()
-  const { language } = useLanguage()
+  const { t } = useLanguage()
 
   const experiences = [
     {
       id: 1,
-      period: { en: 'Cooperative Education', th: 'สหกิจศึกษา' },
-      title: { en: 'Software Engineer (Co-op)', th: 'วิศวกรซอฟต์แวร์ (สหกิจศึกษา)' },
-      company: {
-        en: '[Company Name] · Full Stack & Mobile Development',
-        th: '[ชื่อบริษัท] · พัฒนาเว็บและแอปพลิเคชันมือถือ',
-      },
-      description: {
-        en: 'Contributed to full-stack and mobile application development, working across front-end interfaces, back-end services, and databases within a team environment.',
-        th: 'มีส่วนร่วมในการพัฒนาแอปพลิเคชันเว็บและมือถือแบบครบวงจร ทำงานทั้งส่วนหน้าบ้าน หลังบ้าน และฐานข้อมูลร่วมกับทีม',
-      },
+      periodKey: 'experience.items.coop.period',
+      titleKey: 'experience.items.coop.title',
+      companyKey: 'experience.items.coop.company',
+      descriptionKey: 'experience.items.coop.description',
     },
     {
       id: 2,
-      period: '2020 – 2024',
-      title: { en: 'B.Sc. Computer Science', th: 'ปริญญาตรี วิทยาการคอมพิวเตอร์' },
-      company: {
-        en: 'Kasetsart University, Kamphaeng Saen Campus',
-        th: 'มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน',
-      },
-      description: {
-        en: 'Studied core computer science fundamentals with a focus on software engineering, culminating in a machine-learning stock prediction project.',
-        th: 'ศึกษาพื้นฐานวิทยาการคอมพิวเตอร์โดยเน้นด้านวิศวกรรมซอฟต์แวร์ และจบด้วยโปรเจกต์ทำนายราคาหุ้นด้วยแมชชีนเลิร์นนิง',
-      },
+      periodKey: 'experience.items.degree.period',
+      titleKey: 'experience.items.degree.title',
+      companyKey: 'experience.items.degree.company',
+      descriptionKey: 'experience.items.degree.description',
     },
   ]
 
@@ -39,15 +27,13 @@ export default function Experience() {
       <div className="container">
         <div className={`section-head ${headerClass}`} ref={headerRef}>
           <span className="eyebrow">
-            {language === 'th' ? 'ประสบการณ์' : 'Experience'}
+            {t('experience.eyebrow')}
           </span>
           <h2>
-            {language === 'th' ? 'ประสบการณ์ทำงาน' : 'Where I\'ve worked'}
+            {t('experience.title')}
           </h2>
           <p>
-            {language === 'th'
-              ? 'ประสบการณ์ด้านวิศวกรรมซอฟต์แวร์จากการฝึกงานแบบสหกิจศึกษา'
-              : 'Practical software engineering experience gained through cooperative education.'}
+            {t('experience.description')}
           </p>
         </div>
 
@@ -60,22 +46,16 @@ export default function Experience() {
               <div className="timeline-dot"></div>
               <div className="timeline-card">
                 <span className="timeline-period">
-                  {typeof exp.period === 'string'
-                    ? exp.period
-                    : language === 'th'
-                      ? exp.period.th
-                      : exp.period.en}
+                  {t(exp.periodKey)}
                 </span>
                 <h3>
-                  {language === 'th' ? exp.title.th : exp.title.en}
+                  {t(exp.titleKey)}
                 </h3>
                 <h4>
-                  {language === 'th' ? exp.company.th : exp.company.en}
+                  {t(exp.companyKey)}
                 </h4>
                 <p>
-                  {language === 'th'
-                    ? exp.description.th
-                    : exp.description.en}
+                  {t(exp.descriptionKey)}
                 </p>
               </div>
             </div>

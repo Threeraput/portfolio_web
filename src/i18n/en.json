@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "certificates": "Certificates",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "role": "Full Stack Developer",
+    "lead": "Computer Science graduate from Kasetsart University building clean, reliable web and mobile products — from React interfaces to NestJS APIs and Flutter apps.",
+    "downloadResume": "Download Resume",
+    "viewProjects": "View Projects",
+    "featuredProjects": "Featured Projects",
+    "coreSkillAreas": "Core Skill Areas",
+    "languages": "Languages",
+    "resumeAlert": "Add your resume PDF link here (e.g. /resume.pdf) to enable this button."
+  },
+  "about": {
+    "eyebrow": "About Me",
+    "title": "Building software with care, from idea to deployment",
+    "bio1": "I'm a Computer Science graduate from Kasetsart University, Kamphaeng Saen Campus, with hands-on software engineering experience gained through cooperative education. I enjoy working across the stack — designing intuitive front-ends, building dependable APIs, and shipping mobile apps that people actually use.",
+    "bio2": "My recent work spans a real-time face attendance system, a mobile transcript checker, and a machine-learning stock price prediction model — each one an exercise in turning a practical problem into a working product.",
+    "status": "Open to work",
+    "cards": {
+      "education": {
+        "title": "Computer Science",
+        "subtitle": "Kasetsart University"
+      },
+      "role": {
+        "title": "Full Stack Developer",
+        "subtitle": "Web & Mobile"
+      },
+      "location": {
+        "title": "Thailand",
+        "subtitle": "Based in Nakhon Pathom"
+      },
+      "language": {
+        "title": "Thai / English",
+        "subtitle": "Professional working proficiency"
+      }
+    }
+  },
+  "skills": {
+    "eyebrow": "Skills",
+    "title": "Tools I use to build products",
+    "description": "A practical toolkit spanning front-end interfaces to back-end services, mobile apps, and everyday tooling.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "mobile": "Mobile",
+      "devops": "DevOps",
+      "tools": "Tools"
+    }
+  },
+  "projects": {
+    "eyebrow": "Featured Projects",
+    "title": "Things I've built recently",
+    "description": "A mix of mobile, web, and data-driven projects — from concept to working software.",
+    "filters": {
+      "all": "All",
+      "mobile": "Mobile",
+      "web": "Web",
+      "data": "Data / ML"
+    },
+    "liveDemo": "Live Demo",
+    "items": {
+      "faceAttendance": {
+        "title": "Face Attendance Application",
+        "description": "Real-time attendance tracking using facial recognition, with a live WebSocket feed and cloud sync."
+      },
+      "transcriptChecker": {
+        "title": "Transcript Checker Application",
+        "description": "A mobile app that helps students validate their academic transcripts and track graduation requirements offline."
+      },
+      "stockPrediction": {
+        "title": "Stock Price Prediction",
+        "description": "A regression-based model that forecasts short-term stock price movement from historical market data."
+      }
+    }
+  },
+  "experience": {
+    "eyebrow": "Experience",
+    "title": "Where I've worked",
+    "description": "Practical software engineering experience gained through cooperative education.",
+    "items": {
+      "coop": {
+        "period": "Cooperative Education",
+        "title": "Software Engineer (Co-op)",
+        "company": "[Company Name] · Full Stack & Mobile Development",
+        "description": "Contributed to full-stack and mobile application development, working across front-end interfaces, back-end services, and databases within a team environment."
+      },
+      "degree": {
+        "period": "2020 – 2024",
+        "title": "B.Sc. Computer Science",
+        "company": "Kasetsart University, Kamphaeng Saen Campus",
+        "description": "Studied core computer science fundamentals with a focus on software engineering, culminating in a machine-learning stock prediction project."
+      }
+    }
+  },
+  "certificates": {
+    "eyebrow": "Certificates",
+    "title": "Continuous learning",
+    "description": "Courses and certifications that support my day-to-day engineering work.",
+    "items": {
+      "one": {
+        "name": "[Certificate Name]",
+        "issuer": "[Issuing Organization], [Year]"
+      },
+      "two": {
+        "name": "[Certificate Name]",
+        "issuer": "[Issuing Organization], [Year]"
+      },
+      "three": {
+        "name": "[Certificate Name]",
+        "issuer": "[Issuing Organization], [Year]"
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's build something together",
+    "description": "Open to full-time roles and freelance projects. Feel free to reach out — I usually reply within a day.",
+    "resume": "Resume",
+    "resumeAlert": "Add your resume PDF link here (e.g. /resume.pdf) to enable this button."
+  },
+  "footer": {
+    "copyright": "© 2026 Theeraphat Chumchit. Built with care."
+  }
+}

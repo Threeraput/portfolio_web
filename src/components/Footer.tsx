@@ -1,15 +1,13 @@
 import { useLanguage } from '../context/LanguageContext'
 
 export default function Footer() {
-  const { language } = useLanguage()
+  const { t } = useLanguage()
 
   return (
     <footer>
       <div className="container footer-inner">
         <p>
-          {language === 'th'
-            ? '© 2026 ธีรภัทร ชุมชิต สร้างขึ้นอย่างพิถีพิถัน'
-            : '© 2026 Theeraphat Chumchit. Built with care.'}
+          {t('footer.copyright')}
         </p>
         <div className="footer-social">
           <a

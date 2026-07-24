@@ -1,41 +1,71 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
+import enTranslations from '../i18n/en.json'
+import thTranslations from '../i18n/th.json'
 
 type Language = 'en' | 'th'
-
-interface TranslationKey {
-  en: string
-  th: string
-}
 
 interface LanguageContextType {
   language: Language
   setLanguage: (lang: Language) => void
-  t: (key: TranslationKey) => string
+  t: (key: string) => string
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
+function getInitialLanguage(): Language {
+  if (typeof window === 'undefined') return 'en'
+
+  const storedLanguage = window.localStorage.getItem('language')
+  if (storedLanguage === 'en' || storedLanguage === 'th') {
+    return storedLanguage
+  }
+
+  const htmlLanguage = document.documentElement.getAttribute('data-lang')
+  if (htmlLanguage === 'en' || htmlLanguage === 'th') {
+    return htmlLanguage
+  }
+
+  return 'en'
+}
+
+function getTranslationValue(language: Language, key: string): string {
+  const source = language === 'th' ? thTranslations : enTranslations
+  const resolve = (root: unknown) => {
+    if (!root || typeof root !== 'object') return undefined
+
+    return key.split('.').reduce<unknown>((current, segment) => {
+      if (!current || typeof current !== 'object') return undefined
+      return (current as Record<string, unknown>)[segment]
+    }, root)
+  }
+
+  const translatedValue = resolve(source)
+  if (typeof translatedValue === 'string') {
+    return translatedValue
+  }
+
+  const fallbackValue = resolve(enTranslations)
+  if (typeof fallbackValue === 'string') {
+    return fallbackValue
+  }
+
+  return key
+}
+
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>(() => {
-    if (typeof window === 'undefined') return 'en'
-    const htmlElement = document.documentElement
-    return (htmlElement.getAttribute('data-lang') as Language) || 'en'
-  })
+  const [language, setLanguageState] = useState<Language>(getInitialLanguage)
 
   useEffect(() => {
     const htmlElement = document.documentElement
-    const initialLang = (htmlElement.getAttribute('data-lang') as Language) || 'en'
-    setLanguageState(initialLang)
-  }, [])
+    htmlElement.setAttribute('data-lang', language)
+    window.localStorage.setItem('language', language)
+  }, [language])
 
   const setLanguage = (newLang: Language) => {
     setLanguageState(newLang)
-    document.documentElement.setAttribute('data-lang', newLang)
   }
 
-  const t = (key: TranslationKey): string => {
-    return key[language] || key.en
-  }
+  const t = (key: string): string => getTranslationValue(language, key)
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>

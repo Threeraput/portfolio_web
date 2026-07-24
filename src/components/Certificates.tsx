@@ -3,23 +3,23 @@ import { useLanguage } from '../context/LanguageContext'
 
 export default function Certificates() {
   const { ref: headerRef, className: headerClass } = useScrollReveal()
-  const { language } = useLanguage()
+  const { t } = useLanguage()
 
   const certificates = [
     {
       id: 1,
-      name: { en: '[Certificate Name]', th: '[ชื่อใบรับรอง]' },
-      issuer: { en: '[Issuing Organization], [Year]', th: '[หน่วยงานผู้ออก], [ปี]' },
+      nameKey: 'certificates.items.one.name',
+      issuerKey: 'certificates.items.one.issuer',
     },
     {
       id: 2,
-      name: { en: '[Certificate Name]', th: '[ชื่อใบรับรอง]' },
-      issuer: { en: '[Issuing Organization], [Year]', th: '[หน่วยงานผู้ออก], [ปี]' },
+      nameKey: 'certificates.items.two.name',
+      issuerKey: 'certificates.items.two.issuer',
     },
     {
       id: 3,
-      name: { en: '[Certificate Name]', th: '[ชื่อใบรับรอง]' },
-      issuer: { en: '[Issuing Organization], [Year]', th: '[หน่วยงานผู้ออก], [ปี]' },
+      nameKey: 'certificates.items.three.name',
+      issuerKey: 'certificates.items.three.issuer',
     },
   ]
 
@@ -35,17 +35,13 @@ export default function Certificates() {
       <div className="container">
         <div className={`section-head ${headerClass}`} ref={headerRef}>
           <span className="eyebrow">
-            {language === 'th' ? 'ใบรับรอง' : 'Certificates'}
+            {t('certificates.eyebrow')}
           </span>
           <h2>
-            {language === 'th'
-              ? 'การเรียนรู้อย่างต่อเนื่อง'
-              : 'Continuous learning'}
+            {t('certificates.title')}
           </h2>
           <p>
-            {language === 'th'
-              ? 'คอร์สและใบรับรองที่สนับสนุนการทำงานด้านวิศวกรรมของผม'
-              : 'Courses and certifications that support my day-to-day engineering work.'}
+            {t('certificates.description')}
           </p>
         </div>
         <div className="cert-grid stagger">
@@ -59,10 +55,10 @@ export default function Certificates() {
                 <CertIcon />
               </div>
               <h3>
-                {language === 'th' ? cert.name.th : cert.name.en}
+                {t(cert.nameKey)}
               </h3>
               <span>
-                {language === 'th' ? cert.issuer.th : cert.issuer.en}
+                {t(cert.issuerKey)}
               </span>
             </div>
           ))}

@@ -8,14 +8,12 @@ export default function Hero() {
   const { ref: actionsRef, className: actionsClass } = useScrollReveal()
   const { ref: metaRef, className: metaClass } = useScrollReveal()
   const { ref: illustrationRef, className: illustrationClass } = useScrollReveal(true)
-  const { language } = useLanguage()
+  const { t } = useLanguage()
 
   const handleResumeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault()
     alert(
-      language === 'th'
-        ? 'Please add your resume PDF link (for example, /resume.pdf).'
-        : 'Add your resume PDF link here (e.g. /resume.pdf) to enable this button.'
+      t('hero.resumeAlert')
     )
   }
 
@@ -27,18 +25,16 @@ export default function Hero() {
             className={`hero-greeting ${className1}`}
             ref={ref1}
           >
-            👋 {language === 'th' ? 'สวัสดีครับ ผมชื่อ' : 'Hi, I\'m'}
+            👋 {t('hero.greeting')}
           </span>
           <h1 className={`${className2}`} ref={ref2}>
             Theeraphat "Por" Chumchit<br />
             <span className="role">
-              {language === 'th' ? 'ฟูลสแตกดีเวลลอปเปอร์' : 'Full Stack Developer'}
+              {t('hero.role')}
             </span>
           </h1>
           <p className={`lead ${className3}`} ref={ref3}>
-            {language === 'th'
-              ? 'บัณฑิตวิทยาการคอมพิวเตอร์จากมหาวิทยาลัยเกษตรศาสตร์ ผู้พัฒนาเว็บและแอปพลิเคชันมือถือที่สะอาดและเชื่อถือได้ ตั้งแต่ส่วนติดต่อผู้ใช้ด้วย React ไปจนถึง API ด้วย NestJS และแอปด้วย Flutter'
-              : 'Computer Science graduate from Kasetsart University building clean, reliable web and mobile products — from React interfaces to NestJS APIs and Flutter apps.'}
+            {t('hero.lead')}
           </p>
           <div className={`hero-actions ${actionsClass}`} ref={actionsRef}>
             <a
@@ -57,10 +53,10 @@ export default function Hero() {
               >
                 <path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16" />
               </svg>
-              <span>{language === 'th' ? 'ดาวน์โหลดเรซูเม่' : 'Download Resume'}</span>
+              <span>{t('hero.downloadResume')}</span>
             </a>
             <a href="#projects" className="btn btn-ghost">
-              <span>{language === 'th' ? 'ดูผลงาน' : 'View Projects'}</span>
+              <span>{t('hero.viewProjects')}</span>
               <svg
                 width="16"
                 height="16"
@@ -76,15 +72,15 @@ export default function Hero() {
           <div className={`hero-meta ${metaClass}`} ref={metaRef}>
             <div>
               <strong>3+</strong>
-              <span>{language === 'th' ? 'ผลงานเด่น' : 'Featured Projects'}</span>
+              <span>{t('hero.featuredProjects')}</span>
             </div>
             <div>
               <strong>6</strong>
-              <span>{language === 'th' ? 'สายทักษะหลัก' : 'Core Skill Areas'}</span>
+              <span>{t('hero.coreSkillAreas')}</span>
             </div>
             <div>
               <strong>TH / EN</strong>
-              <span>{language === 'th' ? 'ภาษา' : 'Languages'}</span>
+              <span>{t('hero.languages')}</span>
             </div>
           </div>
         </div>

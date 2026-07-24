@@ -8,7 +8,7 @@ interface NavbarProps {
 
 export default function Navbar({ scrolled }: NavbarProps) {
   const { toggleTheme } = useTheme()
-  const { language, setLanguage } = useLanguage()
+  const { language, setLanguage, t } = useLanguage()
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const navLinksRef = useRef<HTMLDivElement>(null)
 
@@ -17,13 +17,13 @@ export default function Navbar({ scrolled }: NavbarProps) {
   }
 
   const navLinks = [
-    { href: '#home', label: { en: 'Home', th: 'หน้าแรก' } },
-    { href: '#about', label: { en: 'About', th: 'เกี่ยวกับ' } },
-    { href: '#skills', label: { en: 'Skills', th: 'ทักษะ' } },
-    { href: '#projects', label: { en: 'Projects', th: 'ผลงาน' } },
-    { href: '#experience', label: { en: 'Experience', th: 'ประสบการณ์' } },
-    { href: '#certificates', label: { en: 'Certificates', th: 'ใบรับรอง' } },
-    { href: '#contact', label: { en: 'Contact', th: 'ติดต่อ' } },
+    { href: '#home', labelKey: 'nav.home' },
+    { href: '#about', labelKey: 'nav.about' },
+    { href: '#skills', labelKey: 'nav.skills' },
+    { href: '#projects', labelKey: 'nav.projects' },
+    { href: '#experience', labelKey: 'nav.experience' },
+    { href: '#certificates', labelKey: 'nav.certificates' },
+    { href: '#contact', labelKey: 'nav.contact' },
   ]
 
   return (
@@ -44,7 +44,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
               href={link.href}
               onClick={handleNavLinkClick}
             >
-              {language === 'th' ? link.label.th : link.label.en}
+              {t(link.labelKey)}
             </a>
           ))}
         </nav>
