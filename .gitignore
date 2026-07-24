@@ -1,0 +1,9 @@
+node_modules
+portfolio.html
+dist
+.DS_Store
+*.local
+.env
+.env.local
+.env.*.local
+Full Stack Developer Portfolio.make
