@@ -12,11 +12,6 @@
   --border: #E5E7EB;
 
   --primary-rgb: 124, 157, 255;
-  --shadow-color: 30, 41, 59;
-
-  --radius: 16px;
-  --radius-sm: 10px;
-  --radius-lg: 24px;
   --nav-h: 76px;
 
   --shadow-sm: 0 2px 10px rgba(var(--shadow-color), 0.05);
@@ -522,8 +517,8 @@ section {
 .avatar {
   width: 100%;
   aspect-ratio: 1 / 1;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(150deg, var(--secondary), var(--primary));
+  border-radius: var(--avatar-radius, var(--radius-lg));
+  background: #a8a9ac;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -532,11 +527,11 @@ section {
   overflow: hidden;
 }
 
-.avatar span {
-  font-size: 96px;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.04em;
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: var(--avatar-image-position, center center);
 }
 
 .avatar-badge {
