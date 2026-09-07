@@ -623,6 +623,26 @@ section {
   background: var(--bg);
 }
 
+[data-theme="dark"] .skill-card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .skill-card h3 {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .tag {
+  background: #111827;
+  border-color: #475569;
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .tag:hover {
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

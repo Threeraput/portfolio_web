@@ -60,7 +60,7 @@
   },
   "projects": {
     "eyebrow": "Featured Projects",
-    "title": "Things I've built recently",
+    "title": "Things I've built",
     "description": "A mix of mobile, web, and data-driven projects — from concept to working software.",
     "filters": {
       "all": "All",

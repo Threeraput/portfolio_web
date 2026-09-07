@@ -36,7 +36,7 @@ export default function About() {
     {
       icon: (
         <img
-          src="/browser-svgrepo-com.svg"
+          src="/database-svgrepo-com.svg"
           alt="Full Stack Developer"
           style={{
             width: "100%",
