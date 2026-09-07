@@ -24,7 +24,7 @@ export default function Contact() {
             {t('contact.description')}
           </p>
           <div className="contact-links">
-            <a href="mailto:your.email@example.com" className="contact-link">
+            <a href="mailto:threeraput5tmr@gmail.com" className="contact-link">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -34,7 +34,7 @@ export default function Contact() {
                 <rect x="2" y="4" width="20" height="16" rx="2" />
                 <path d="m2 7 10 6 10-6" />
               </svg>
-              your.email@example.com
+              threeraput5tmr@gmail.com
             </a>
             <a
               href="https://github.com/yourusername"

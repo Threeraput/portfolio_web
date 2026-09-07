@@ -18,48 +18,69 @@ export default function About() {
   const infoCards = [
     {
       icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="var(--primary)"
-          strokeWidth="2"
-        >
-          <path d="M22 10 12 5 2 10l10 5 10-5Z" />
-          <path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5" />
-        </svg>
+        <img
+          src="/ku.jpg"
+          alt="Kasetsart University"
+          style={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "var(--radius-sm)",
+            objectFit: "cover",
+          }}
+        />
       ),
-      bgColor: "rgba(var(--primary-rgb),.14)",
+      bgColor: "transparent",
       titleKey: "about.cards.education.title",
       subtitleKey: "about.cards.education.subtitle",
     },
     {
       icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="#3B8C8F" strokeWidth="2">
-          <path d="m8 3-5 9 5 9M16 3l5 9-5 9" />
-        </svg>
+        <img
+          src="/browser-svgrepo-com.svg"
+          alt="Full Stack Developer"
+          style={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "var(--radius-sm)",
+            objectFit: "cover",
+          }}
+        />
       ),
-      bgColor: "rgba(168,218,220,.35)",
+      bgColor: "transparent",
       titleKey: "about.cards.role.title",
       subtitleKey: "about.cards.role.subtitle",
     },
     {
       icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="#B4763B" strokeWidth="2">
-          <path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z" />
-          <circle cx="12" cy="10" r="2.5" />
-        </svg>
+        <img
+          src="/google-maps-old-svgrepo-com.svg"
+          alt="Location"
+          style={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "var(--radius-sm)",
+            objectFit: "cover",
+          }}
+        />
       ),
-      bgColor: "rgba(255,214,165,.4)",
+      bgColor: "transparent",
       titleKey: "about.cards.location.title",
       subtitleKey: "about.cards.location.subtitle",
     },
     {
       icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="#3B8C63" strokeWidth="2">
-          <path d="M4 5h16M4 12h10M4 19h7" />
-        </svg>
+        <img
+          src="/language-svgrepo-com.svg"
+          alt="Languages"
+          style={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "var(--radius-sm)",
+            objectFit: "cover",
+          }}
+        />
       ),
-      bgColor: "rgba(168,230,207,.4)",
+      bgColor: "transparent",
       titleKey: "about.cards.language.title",
       subtitleKey: "about.cards.language.subtitle",
     },

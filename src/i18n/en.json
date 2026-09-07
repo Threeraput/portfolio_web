@@ -10,8 +10,9 @@
   },
   "hero": {
     "greeting": "Hi, I'm",
+    "name": "Theeraphat Chumchit ",
     "role": "Full Stack Developer",
-    "lead": "Computer Science graduate from Kasetsart University building clean, reliable web and mobile products — from React interfaces to NestJS APIs and Flutter apps.",
+    "lead": "Software Engineer building web and mobile applications to solve real problems and make everyday work simpler.",
     "downloadResume": "Download Resume",
     "viewProjects": "View Projects",
     "featuredProjects": "Featured Projects",
@@ -21,7 +22,7 @@
   },
   "about": {
     "eyebrow": "About Me",
-    "title": "Building software with care, from idea to deployment",
+    "title": "From Idea to Production",
     "bio1": "I'm a Computer Science graduate from Kasetsart University, Kamphaeng Saen Campus, with hands-on software engineering experience gained through cooperative education. I enjoy working across the stack — designing intuitive front-ends, building dependable APIs, and shipping mobile apps that people actually use.",
     "bio2": "My recent work spans a real-time face attendance system, a mobile transcript checker, and a machine-learning stock price prediction model — each one an exercise in turning a practical problem into a working product.",
     "status": "Open to work",
@@ -36,7 +37,7 @@
       },
       "location": {
         "title": "Thailand",
-        "subtitle": "Based in Nakhon Pathom"
+        "subtitle": "Location"
       },
       "language": {
         "title": "Thai / English",
@@ -46,8 +47,8 @@
   },
   "skills": {
     "eyebrow": "Skills",
-    "title": "Tools I use to build products",
-    "description": "A practical toolkit spanning front-end interfaces to back-end services, mobile apps, and everyday tooling.",
+    "title": "Tools",
+    "description": "A practical toolkit spanning various aspects of software development.",
     "categories": {
       "frontend": "Frontend",
       "backend": "Backend",

@@ -25,10 +25,10 @@ export default function Hero() {
             className={`hero-greeting ${className1}`}
             ref={ref1}
           >
-            👋 {t('hero.greeting')}
+              {t('hero.greeting')}
           </span>
           <h1 className={`${className2}`} ref={ref2}>
-            Theeraphat "Por" Chumchit<br />
+            {t('hero.name')}<br />
             <span className="role">
               {t('hero.role')}
             </span>
@@ -86,26 +86,12 @@ export default function Hero() {
         </div>
 
         <div className={`hero-illustration ${illustrationClass}`} ref={illustrationRef}>
-          <svg viewBox="0 0 420 420" width="100%" style={{ maxWidth: '420px' }}>
-            <circle className="float-2" cx="330" cy="90" r="46" fill="var(--accent)" opacity=".55" />
-            <circle className="float-3" cx="60" cy="330" r="34" fill="var(--secondary)" opacity=".55" />
-            <rect className="float-3" x="30" y="60" width="46" height="46" rx="14" fill="var(--success)" opacity=".5" />
-            <g className="float-1">
-              <rect x="70" y="130" width="280" height="180" rx="16" fill="var(--surface)" stroke="var(--border)" strokeWidth="2" />
-              <rect x="92" y="152" width="236" height="118" rx="10" fill="var(--bg)" />
-              <circle cx="110" cy="166" r="4" fill="var(--danger)" />
-              <circle cx="124" cy="166" r="4" fill="var(--accent)" />
-              <circle cx="138" cy="166" r="4" fill="var(--success)" />
-              <text x="106" y="196" fontFamily="monospace" fontSize="13" fill="var(--primary)">
-                {'</>'}
-              </text>
-              <rect x="106" y="208" width="120" height="8" rx="4" fill="var(--primary)" opacity=".55" />
-              <rect x="106" y="224" width="160" height="8" rx="4" fill="var(--secondary)" opacity=".7" />
-              <rect x="106" y="240" width="90" height="8" rx="4" fill="var(--accent)" opacity=".7" />
-              <rect x="60" y="300" width="300" height="18" rx="9" fill="var(--border)" />
-              <rect x="150" y="318" width="120" height="12" rx="6" fill="var(--border)" />
-            </g>
-          </svg>
+          <img
+            src="/developer%20animation.svg"
+            alt="Developer illustration"
+            width="100%"
+            style={{ maxWidth: '420px' }}
+          />
         </div>
       </div>
     </section>

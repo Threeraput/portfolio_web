@@ -30,8 +30,8 @@ export default function Navbar({ scrolled }: NavbarProps) {
     <header className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
       <div className="nav-inner">
         <a href="#home" className="logo">
-          <span className="logo-mark">PC</span>
-          <span>Por.dev</span>
+          <span className="logo-mark">TRP</span>
+          <span>My portfolio</span>
         </a>
 
         <nav
