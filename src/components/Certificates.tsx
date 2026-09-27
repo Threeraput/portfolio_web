@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { useLanguage } from '../context/LanguageContext'
+import CertificateModal from './CertificateModal'
 
 export default function Certificates() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const { ref: headerRef, className: headerClass } = useScrollReveal()
   const { t } = useLanguage()
 
@@ -50,6 +53,9 @@ export default function Certificates() {
               key={cert.id}
               className="cert-card reveal is-visible"
               style={{ '--i': i } as React.CSSProperties}
+              onClick={() => setActiveIndex(i)}
+              role="button"
+              tabIndex={0}
             >
               <div className="ic">
                 <CertIcon />
@@ -64,6 +70,15 @@ export default function Certificates() {
           ))}
         </div>
       </div>
+
+      {activeIndex !== null && (
+        <CertificateModal
+          certificates={certificates}
+          activeIndex={activeIndex}
+          onClose={() => setActiveIndex(null)}
+          onNavigate={setActiveIndex}
+        />
+      )}
     </section>
   )
 }

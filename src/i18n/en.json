@@ -124,6 +124,7 @@
     "eyebrow": "Certificates",
     "title": "Continuous learning",
     "description": "Courses and certifications that support my day-to-day engineering work.",
+    "imageComingSoon": "Certificate image coming soon",
     "items": {
       "one": {
         "name": "[Certificate Name]",
