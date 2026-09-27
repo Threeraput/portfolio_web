@@ -2,8 +2,11 @@ import { useState } from 'react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { useLanguage } from '../context/LanguageContext'
 
+const PROJECTS_PER_PAGE = 4
+
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('all')
+  const [currentPage, setCurrentPage] = useState(1)
   const { ref: headerRef, className: headerClass } = useScrollReveal()
   const { ref: filterRef, className: filterClass } = useScrollReveal()
   const { t } = useLanguage()
@@ -66,6 +69,63 @@ export default function Projects() {
       descriptionKey: 'projects.items.stockPrediction.description',
       stack: ['Python', 'Regression Modeling', 'Pandas'],
     },
+    {
+      id: 4,
+      category: 'web',
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#3B7DB4"
+          strokeWidth="1.6"
+        >
+          <rect x="3" y="4" width="18" height="16" rx="2" />
+          <path d="M3 9h18M8 4v5" />
+        </svg>
+      ),
+      bgGradient: 'linear-gradient(135deg,rgba(168,200,230,.35),rgba(var(--primary-rgb),.22))',
+      titleKey: 'projects.items.taskDashboard.title',
+      descriptionKey: 'projects.items.taskDashboard.description',
+      stack: ['React', 'TypeScript', 'Node.js', 'MongoDB'],
+    },
+    {
+      id: 5,
+      category: 'web',
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#8C5CB4"
+          strokeWidth="1.6"
+        >
+          <path d="M4 4h16v12H8l-4 4Z" />
+          <path d="M8 9h8M8 12h5" />
+        </svg>
+      ),
+      bgGradient: 'linear-gradient(135deg,rgba(216,180,230,.35),rgba(var(--primary-rgb),.22))',
+      titleKey: 'projects.items.chatSupport.title',
+      descriptionKey: 'projects.items.chatSupport.description',
+      stack: ['Next.js', 'Socket.IO', 'Redis'],
+    },
+    {
+      id: 6,
+      category: 'data',
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#B4405C"
+          strokeWidth="1.6"
+        >
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v5l3 3" />
+        </svg>
+      ),
+      bgGradient: 'linear-gradient(135deg,rgba(230,180,190,.35),rgba(var(--primary-rgb),.22))',
+      titleKey: 'projects.items.sentimentAnalysis.title',
+      descriptionKey: 'projects.items.sentimentAnalysis.description',
+      stack: ['Python', 'NLP', 'Scikit-learn'],
+    },
   ]
 
   const filters = [
@@ -79,6 +139,22 @@ export default function Projects() {
     activeFilter === 'all'
       ? projects
       : projects.filter((p) => p.category === activeFilter)
+
+  const totalPages = Math.ceil(filteredProjects.length / PROJECTS_PER_PAGE)
+  const paginatedProjects = filteredProjects.slice(
+    (currentPage - 1) * PROJECTS_PER_PAGE,
+    currentPage * PROJECTS_PER_PAGE
+  )
+
+  const handleFilterChange = (value: string) => {
+    setActiveFilter(value)
+    setCurrentPage(1)
+  }
+
+  const goToPage = (page: number) => {
+    setCurrentPage(page)
+    document.getElementById('projectGrid')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
 
   return (
     <section className="projects" id="projects">
@@ -100,7 +176,7 @@ export default function Projects() {
             <button
               key={filter.value}
               className={`filter-btn ${activeFilter === filter.value ? 'active' : ''}`}
-              onClick={() => setActiveFilter(filter.value)}
+              onClick={() => handleFilterChange(filter.value)}
             >
               {t(filter.labelKey)}
             </button>
@@ -108,7 +184,7 @@ export default function Projects() {
         </div>
 
         <div className="project-grid stagger" id="projectGrid">
-          {filteredProjects.map((project, i) => (
+          {paginatedProjects.map((project, i) => (
             <div
               key={project.id}
               className="project-card reveal is-visible"
@@ -150,6 +226,34 @@ export default function Projects() {
             </div>
           ))}
         </div>
+
+        {totalPages > 1 && (
+          <div className="pagination">
+            <button
+              className="pagination-btn"
+              onClick={() => goToPage(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
+              {t('projects.pagination.prev')}
+            </button>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                className={`pagination-btn pagination-num ${page === currentPage ? 'active' : ''}`}
+                onClick={() => goToPage(page)}
+              >
+                {page}
+              </button>
+            ))}
+            <button
+              className="pagination-btn"
+              onClick={() => goToPage(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            >
+              {t('projects.pagination.next')}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   )

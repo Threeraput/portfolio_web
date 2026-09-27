@@ -69,6 +69,10 @@
       "data": "Data / ML"
     },
     "liveDemo": "Live Demo",
+    "pagination": {
+      "prev": "Previous",
+      "next": "Next"
+    },
     "items": {
       "faceAttendance": {
         "title": "Face Attendance Application",
@@ -81,6 +85,18 @@
       "stockPrediction": {
         "title": "Stock Price Prediction",
         "description": "A regression-based model that forecasts short-term stock price movement from historical market data."
+      },
+      "taskDashboard": {
+        "title": "Team Task Dashboard",
+        "description": "A web dashboard for managing team tasks with real-time status updates and progress tracking."
+      },
+      "chatSupport": {
+        "title": "Live Chat Support Widget",
+        "description": "An embeddable customer support chat widget with real-time messaging and ticket history."
+      },
+      "sentimentAnalysis": {
+        "title": "Sentiment Analysis Tool",
+        "description": "An NLP tool that classifies customer review sentiment to surface product feedback trends."
       }
     }
   },
