@@ -127,16 +127,20 @@
     "imageComingSoon": "เร็วๆ นี้จะมีรูปใบรับรอง",
     "items": {
       "one": {
-        "name": "[ชื่อใบรับรอง]",
-        "issuer": "[หน่วยงานผู้ออก], [ปี]"
+        "name": "Build Intelligent Applications",
+        "issuer": "Microsoft · กรกฎาคม 2569"
       },
       "two": {
-        "name": "[ชื่อใบรับรอง]",
-        "issuer": "[หน่วยงานผู้ออก], [ปี]"
+        "name": "AI Foundation และเวิร์กช็อป Amazon Q Business Application",
+        "issuer": "AWS Tech Alliance · ตุลาคม 2568"
       },
       "three": {
-        "name": "[ชื่อใบรับรอง]",
-        "issuer": "[หน่วยงานผู้ออก], [ปี]"
+        "name": "วิทยาศาสตรบัณฑิต สาขาวิทยาการคอมพิวเตอร์",
+        "issuer": "มหาวิทยาลัยเกษตรศาสตร์ · ปีการศึกษา 2567"
+      },
+      "four": {
+        "name": "ทักษะด้าน AI และเวิร์กช็อปการใช้แพลตฟอร์ม AI for Thai",
+        "issuer": "มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน · 2568"
       }
     }
   },

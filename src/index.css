@@ -1138,24 +1138,14 @@ section {
   border-color: var(--accent);
 }
 
-.cert-card .ic {
-  width: 44px;
-  height: 44px;
+.cert-card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.4;
+  object-fit: contain;
   border-radius: var(--radius-sm);
-  background: rgba(255, 214, 165, 0.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-[data-theme="dark"] .cert-card .ic {
-  background: rgba(247, 197, 159, 0.18);
-}
-
-.cert-card .ic svg {
-  width: 22px;
-  height: 22px;
-  color: var(--accent);
+  border: 1px solid var(--border);
+  background: #fff;
 }
 
 .cert-card h3 {

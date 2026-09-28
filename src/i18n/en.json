@@ -127,16 +127,20 @@
     "imageComingSoon": "Certificate image coming soon",
     "items": {
       "one": {
-        "name": "[Certificate Name]",
-        "issuer": "[Issuing Organization], [Year]"
+        "name": "Build Intelligent Applications",
+        "issuer": "Microsoft · July 2026"
       },
       "two": {
-        "name": "[Certificate Name]",
-        "issuer": "[Issuing Organization], [Year]"
+        "name": "AI Foundation & Amazon Q Business Application Workshop",
+        "issuer": "AWS Tech Alliance · October 2025"
       },
       "three": {
-        "name": "[Certificate Name]",
-        "issuer": "[Issuing Organization], [Year]"
+        "name": "B.Sc. Computer Science",
+        "issuer": "Kasetsart University · Academic Year 2024"
+      },
+      "four": {
+        "name": "AI Skills and AI for Thai Platform Workshop",
+        "issuer": "Kasetsart University, Kamphaeng Saen Campus · 2025"
       }
     }
   },
