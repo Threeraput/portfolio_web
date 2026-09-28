@@ -5,9 +5,8 @@ export default function Contact() {
   const { ref, className } = useScrollReveal(true)
   const { t } = useLanguage()
 
-  const handleResumeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    alert(t('contact.resumeAlert'))
+  const copyEmail = () => {
+    void navigator.clipboard.writeText('threeraput5tmr@gmail.com')
   }
 
   return (
@@ -24,7 +23,10 @@ export default function Contact() {
             {t('contact.description')}
           </p>
           <div className="contact-links">
-            <a href="mailto:threeraput5tmr@gmail.com" className="contact-link">
+            <button
+              className="contact-link"
+              onClick={copyEmail}
+            >
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -34,10 +36,10 @@ export default function Contact() {
                 <rect x="2" y="4" width="20" height="16" rx="2" />
                 <path d="m2 7 10 6 10-6" />
               </svg>
-              threeraput5tmr@gmail.com
-            </a>
+                threeraput5@gmail.com
+            </button>
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/Threeraput"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-link"
@@ -48,7 +50,7 @@ export default function Contact() {
               GitHub
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/theeraphat-chumchit-a1bb14267/"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-link"
@@ -59,10 +61,10 @@ export default function Contact() {
               LinkedIn
             </a>
             <a
-              href="#"
+              href="/resume/Theeraphat_CV.pdf"
+              download="Theeraphat_CV.pdf"
               className="contact-link"
               id="contactResumeBtn"
-              onClick={handleResumeClick}
             >
               <svg
                 viewBox="0 0 24 24"

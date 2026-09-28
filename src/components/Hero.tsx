@@ -10,13 +10,6 @@ export default function Hero() {
   const { ref: illustrationRef, className: illustrationClass } = useScrollReveal(true)
   const { t } = useLanguage()
 
-  const handleResumeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault()
-    alert(
-      t('hero.resumeAlert')
-    )
-  }
-
   return (
     <section className="hero" id="home">
       <div className="container hero-grid">
@@ -38,10 +31,10 @@ export default function Hero() {
           </p>
           <div className={`hero-actions ${actionsClass}`} ref={actionsRef}>
             <a
-              href="#"
+              href="/resume/Theeraphat_CV.pdf"
+              download="Theeraphat_CV.pdf"
               className="btn btn-primary"
               id="downloadResumeBtn"
-              onClick={handleResumeClick}
             >
               <svg
                 width="18"

@@ -11,7 +11,7 @@ export default function Footer() {
         </p>
         <div className="footer-social">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/Threeraput"
             target="_blank"
             rel="noopener noreferrer"
             className="icon-btn"
@@ -22,7 +22,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/theeraphat-chumchit-a1bb14267/"
             target="_blank"
             rel="noopener noreferrer"
             className="icon-btn"
@@ -32,10 +32,13 @@ export default function Footer() {
               <path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2 2 0 1 1 0-4 2 2 0 0 1 0 4ZM7 20.4H3.6V9H7v11.4Z" />
             </svg>
           </a>
-          <a
-            href="mailto:your.email@example.com"
+          <button
+            type="button"
             className="icon-btn"
             aria-label="Email"
+            onClick={() => {
+              void navigator.clipboard.writeText('threeraput5tmr@gmail.com')
+            }}
           >
             <svg
               viewBox="0 0 24 24"
@@ -46,7 +49,7 @@ export default function Footer() {
               <rect x="2" y="4" width="20" height="16" rx="2" />
               <path d="m2 7 10 6 10-6" />
             </svg>
-          </a>
+          </button>
         </div>
       </div>
     </footer>
