@@ -1,13 +1,10 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { useLanguage } from '../context/LanguageContext'
+import CopyEmailButton from './CopyEmailButton'
 
 export default function Contact() {
   const { ref, className } = useScrollReveal(true)
   const { t } = useLanguage()
-
-  const copyEmail = () => {
-    void navigator.clipboard.writeText('threeraput5tmr@gmail.com')
-  }
 
   return (
     <section className="contact" id="contact">
@@ -23,10 +20,7 @@ export default function Contact() {
             {t('contact.description')}
           </p>
           <div className="contact-links">
-            <button
-              className="contact-link"
-              onClick={copyEmail}
-            >
+            <CopyEmailButton className="contact-link" ariaLabel="Email">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -36,8 +30,8 @@ export default function Contact() {
                 <rect x="2" y="4" width="20" height="16" rx="2" />
                 <path d="m2 7 10 6 10-6" />
               </svg>
-                threeraput5@gmail.com
-            </button>
+              threeraput5tmr@gmail.com
+            </CopyEmailButton>
             <a
               href="https://github.com/Threeraput"
               target="_blank"

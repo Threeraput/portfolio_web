@@ -149,6 +149,7 @@
     "title": "Let's build something together",
     "description": "Open to full-time roles and freelance projects. Feel free to reach out — I usually reply within a day.",
     "resume": "Resume",
+    "emailCopied": "Email copied",
     "resumeAlert": "Add your resume PDF link here (e.g. /resume.pdf) to enable this button."
   },
   "footer": {

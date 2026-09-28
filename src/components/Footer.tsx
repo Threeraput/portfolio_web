@@ -1,4 +1,5 @@
 import { useLanguage } from '../context/LanguageContext'
+import CopyEmailButton from './CopyEmailButton'
 
 export default function Footer() {
   const { t } = useLanguage()
@@ -32,14 +33,7 @@ export default function Footer() {
               <path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2 2 0 1 1 0-4 2 2 0 0 1 0 4ZM7 20.4H3.6V9H7v11.4Z" />
             </svg>
           </a>
-          <button
-            type="button"
-            className="icon-btn"
-            aria-label="Email"
-            onClick={() => {
-              void navigator.clipboard.writeText('threeraput5tmr@gmail.com')
-            }}
-          >
+          <CopyEmailButton className="icon-btn" ariaLabel="Email">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -49,7 +43,7 @@ export default function Footer() {
               <rect x="2" y="4" width="20" height="16" rx="2" />
               <path d="m2 7 10 6 10-6" />
             </svg>
-          </button>
+          </CopyEmailButton>
         </div>
       </div>
     </footer>
