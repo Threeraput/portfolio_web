@@ -1186,11 +1186,16 @@ section {
 }
 
 .cert-modal-image {
-  width: 100%;
+  box-sizing: border-box;
+  width: calc(100% - 24px);
   max-height: 620px;
+  margin: 12px;
   object-fit: contain;
   display: block;
   background: var(--bg-alt, var(--surface));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 .cert-modal-placeholder {
