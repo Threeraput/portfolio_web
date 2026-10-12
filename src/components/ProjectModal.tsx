@@ -14,6 +14,9 @@ export type ProjectModalData = {
   titleKey: string
   descriptionKey: string
   stack: string[]
+  roleKey?: string
+  highlightsKeys?: string[]
+  coverImage?: string
   media?: ProjectMedia[]
 }
 
@@ -24,11 +27,16 @@ type ProjectModalProps = {
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const [activeSlide, setActiveSlide] = useState(0)
+  const [isPortraitSlide, setIsPortraitSlide] = useState(false)
   const { t } = useLanguage()
 
   const media = project.media ?? []
   const hasMedia = media.length > 0
   const slideCount = hasMedia ? media.length : 1
+
+  useEffect(() => {
+    setIsPortraitSlide(false)
+  }, [activeSlide])
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
@@ -48,12 +56,15 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   return createPortal(
     <div className="project-modal-overlay" onClick={onClose}>
-      <div className="project-modal" onClick={(e) => e.stopPropagation()}>
+      <div
+        className={`project-modal ${isPortraitSlide ? 'is-portrait' : ''}`}
+        onClick={(e) => e.stopPropagation()}
+      >
         <button className="project-modal-close" onClick={onClose} aria-label="Close">
           ✕
         </button>
 
-        <div className="modal-carousel">
+        <div className={`modal-carousel ${isPortraitSlide ? 'is-portrait' : ''}`}>
           {hasMedia ? (
             media[activeSlide].type === 'video' ? (
               <video
@@ -69,6 +80,10 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 className="modal-slide modal-slide-image"
                 src={media[activeSlide].src}
                 alt={media[activeSlide].alt ?? t(project.titleKey)}
+                onLoad={(event) => {
+                  const image = event.currentTarget
+                  setIsPortraitSlide(image.naturalHeight > image.naturalWidth)
+                }}
               />
             ) : (
               <div
@@ -128,6 +143,22 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         <div className="modal-body">
           <h3>{t(project.titleKey)}</h3>
           <p>{t(project.descriptionKey)}</p>
+          {project.roleKey && (
+            <div className="modal-detail-section">
+              <h4 className="modal-detail-label">{t('projects.modal.role')}</h4>
+              <p>{t(project.roleKey)}</p>
+            </div>
+          )}
+          {project.highlightsKeys && (
+            <div className="modal-detail-section">
+              <h4 className="modal-detail-label">{t('projects.modal.highlights')}</h4>
+              <ul className="modal-highlights">
+                {project.highlightsKeys.map((key) => (
+                  <li key={key}>{t(key)}</li>
+                ))}
+              </ul>
+            </div>
+          )}
           <div className="project-stack">
             {project.stack.map((skill) => (
               <span key={skill} className="tag">

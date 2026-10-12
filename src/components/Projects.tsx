@@ -77,7 +77,26 @@ export default function Projects() {
       bgGradient: 'linear-gradient(135deg,rgba(var(--primary-rgb),.25),rgba(168,218,220,.3))',
       titleKey: 'projects.items.faceAttendance.title',
       descriptionKey: 'projects.items.faceAttendance.description',
-      stack: ['Flutter', 'FastAPI', 'PostgreSQL', 'WebSocket', 'Firebase'],
+      roleKey: 'projects.items.faceAttendance.role',
+      highlightsKeys: [
+        'projects.items.faceAttendance.highlights.faceVerification',
+        'projects.items.faceAttendance.highlights.geofencing',
+        'projects.items.faceAttendance.highlights.liveAttendance',
+        'projects.items.faceAttendance.highlights.classroomTools',
+        'projects.items.faceAttendance.highlights.security',
+      ],
+      stack: [
+        'Flutter',
+        'FastAPI',
+        'Python',
+        'Google ML Kit',
+        'OpenCV',
+        'dlib',
+        'PostgreSQL',
+        'WebSockets',
+        'Firebase',
+      ],
+      coverImage: '/face_project/face-scan.png',
       media: faceAttendanceScreenshots,
     },
     {
@@ -269,7 +288,9 @@ export default function Projects() {
 
         <div className="project-grid stagger" id="projectGrid">
           {paginatedProjects.map((project, i) => {
-            const coverImage = project.media?.find((item) => item.type === 'image')
+            const coverImage =
+              project.coverImage ??
+              project.media?.find((item) => item.type === 'image')?.src
 
             return (
               <div
@@ -285,7 +306,7 @@ export default function Projects() {
                   style={{ background: project.bgGradient }}
                 >
                   {coverImage ? (
-                    <img className="project-shot-image" src={coverImage.src} alt="" />
+                    <img className="project-shot-image" src={coverImage} alt="" />
                   ) : project.icon}
                 </div>
                 <div className="project-body">

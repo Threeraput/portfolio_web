@@ -69,6 +69,10 @@
       "data": "Data / ML"
     },
     "liveDemo": "Live Demo",
+    "modal": {
+      "role": "Role",
+      "highlights": "Key Features"
+    },
     "pagination": {
       "prev": "Previous",
       "next": "Next"
@@ -77,7 +81,15 @@
     "items": {
       "faceAttendance": {
         "title": "Face Attendance Application",
-        "description": "Real-time attendance tracking using facial recognition, with a live WebSocket feed and cloud sync."
+        "description": "A full-stack classroom platform for face- and location-verified attendance, live session updates, and everyday class management.",
+        "role": "Full-Stack Developer · Mobile & Backend",
+        "highlights": {
+          "faceVerification": "Face verification combines on-device Google ML Kit checks with server-side dlib and OpenCV matching.",
+          "geofencing": "Geofencing checks proximity to the instructor, detects mock locations, and supports re-verification during class.",
+          "liveAttendance": "WebSockets stream check-ins live; APScheduler closes sessions and marks absences automatically.",
+          "classroomTools": "Classroom tools include assignments, file submissions, grading, announcements, push notifications, and attendance reports.",
+          "security": "Role-based access, JWT authentication, bcrypt password hashing, and email OTP protect account workflows."
+        }
       },
       "transcriptChecker": {
         "title": "Transcript Checker Application",
