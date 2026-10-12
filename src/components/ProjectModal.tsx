@@ -66,7 +66,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             ) : media[activeSlide].type === 'image' ? (
               <img
                 key={media[activeSlide].src}
-                className="modal-slide"
+                className="modal-slide modal-slide-image"
                 src={media[activeSlide].src}
                 alt={media[activeSlide].alt ?? t(project.titleKey)}
               />

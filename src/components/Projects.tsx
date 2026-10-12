@@ -13,6 +13,44 @@ const makePlaceholderMedia = (colors: string[]): ProjectMedia[] =>
     label: `Screenshot ${i + 1}`,
   }))
 
+const faceAttendanceScreenshots = [
+  'first.jpg',
+  'register.jpg',
+  'register.png',
+  'registernull.jpg',
+  'mail.png',
+  'input_otp.jpg',
+  'otp.jpg',
+  'face.jpg',
+  'require_keep_face.jpg',
+  'profile.jpg',
+  'updateprofile.jpg',
+  'joinclass.jpg',
+  'joinclassfrom.jpg',
+  'stjoinclass.jpg',
+  'stnotjoinclass.jpg',
+  'stsideview.jpg',
+  'teacherclass.jpg',
+  'createrclass.jpg',
+  'classworknullfeed.jpg',
+  'feedclasswork.jpg',
+  'steamnullfeed.jpg',
+  'steam.jpg',
+  'feedclasswork.jpg',
+  'create_chekin.jpg',
+  'createannoucement.jpg',
+  'creatework.jpg',
+  'datecreatework.jpg',
+  'timecreatework.jpg',
+  'reportst.jpg',
+  'reportteacher.jpg',
+  'people.jpg',
+].map((fileName): ProjectMedia => ({
+  type: 'image',
+  src: `/face_project/${fileName}`,
+  alt: `Face attendance application screen: ${fileName}`,
+}))
+
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('all')
   const [currentPage, setCurrentPage] = useState(1)
@@ -40,13 +78,7 @@ export default function Projects() {
       titleKey: 'projects.items.faceAttendance.title',
       descriptionKey: 'projects.items.faceAttendance.description',
       stack: ['Flutter', 'FastAPI', 'PostgreSQL', 'WebSocket', 'Firebase'],
-      media: makePlaceholderMedia([
-        'linear-gradient(135deg,#7FB3D5,#5499C7)',
-        'linear-gradient(135deg,#5499C7,#2E86C1)',
-        'linear-gradient(135deg,#2E86C1,#1B4F72)',
-        'linear-gradient(135deg,#85C1E9,#3498DB)',
-        'linear-gradient(135deg,#AED6F1,#5DADE2)',
-      ]),
+      media: faceAttendanceScreenshots,
     },
     {
       id: 2,
@@ -236,50 +268,56 @@ export default function Projects() {
         </div>
 
         <div className="project-grid stagger" id="projectGrid">
-          {paginatedProjects.map((project, i) => (
-            <div
-              key={project.id}
-              className="project-card reveal is-visible"
-              style={{ '--i': i } as React.CSSProperties}
-              onClick={() => setSelectedProject(project)}
-              role="button"
-              tabIndex={0}
-            >
+          {paginatedProjects.map((project, i) => {
+            const coverImage = project.media?.find((item) => item.type === 'image')
+
+            return (
               <div
-                className="project-shot"
-                style={{ background: project.bgGradient }}
+                key={project.id}
+                className="project-card reveal is-visible"
+                style={{ '--i': i } as React.CSSProperties}
+                onClick={() => setSelectedProject(project)}
+                role="button"
+                tabIndex={0}
               >
-                {project.icon}
-              </div>
-              <div className="project-body">
-                <h3>{t(project.titleKey)}</h3>
-                <p>{t(project.descriptionKey)}</p>
-                <div className="project-stack">
-                  {project.stack.map((skill) => (
-                    <span key={skill} className="tag">
-                      {skill}
-                    </span>
-                  ))}
+                <div
+                  className="project-shot"
+                  style={{ background: project.bgGradient }}
+                >
+                  {coverImage ? (
+                    <img className="project-shot-image" src={coverImage.src} alt="" />
+                  ) : project.icon}
                 </div>
-                <div className="project-actions">
-                  <a href="#" className="btn btn-ghost btn-sm" onClick={(e) => e.stopPropagation()}>
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z" />
-                    </svg>
-                    GitHub
-                  </a>
-                  <a href="#" className="btn btn-primary btn-sm" onClick={(e) => e.stopPropagation()}>
-                    <span>{t('projects.liveDemo')}</span>
-                  </a>
+                <div className="project-body">
+                  <h3>{t(project.titleKey)}</h3>
+                  <p>{t(project.descriptionKey)}</p>
+                  <div className="project-stack">
+                    {project.stack.map((skill) => (
+                      <span key={skill} className="tag">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="project-actions">
+                    <a href="#" className="btn btn-ghost btn-sm" onClick={(e) => e.stopPropagation()}>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 0 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z" />
+                      </svg>
+                      GitHub
+                    </a>
+                    <a href="#" className="btn btn-primary btn-sm" onClick={(e) => e.stopPropagation()}>
+                      <span>{t('projects.liveDemo')}</span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         {totalPages > 1 && (

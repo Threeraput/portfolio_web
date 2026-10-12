@@ -871,6 +871,10 @@ section {
   display: block;
 }
 
+.modal-slide-image {
+  object-fit: contain;
+}
+
 .modal-slide-placeholder {
   display: flex;
   flex-direction: column;
@@ -921,10 +925,11 @@ section {
 
 .modal-thumbnails {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 14px 0;
+  padding: 14px 16px;
 }
 
 .modal-thumb {
@@ -988,6 +993,12 @@ section {
   width: 64px;
   height: 64px;
   opacity: 0.9;
+}
+
+.project-shot-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .project-body {
