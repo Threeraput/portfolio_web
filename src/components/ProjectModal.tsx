@@ -1,42 +1,20 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useLanguage } from '../context/LanguageContext'
-
-export type ProjectMedia =
-  | { type: 'image'; src: string; alt?: string }
-  | { type: 'video'; src: string; alt?: string }
-  | { type: 'placeholder'; label: string; color: string }
-
-export type ProjectModalData = {
-  id: number
-  icon: React.ReactNode
-  bgGradient: string
-  titleKey: string
-  descriptionKey: string
-  stack: string[]
-  roleKey?: string
-  highlightsKeys?: string[]
-  coverImage?: string
-  media?: ProjectMedia[]
-}
+import type { ProjectData } from '../data/projects'
 
 type ProjectModalProps = {
-  project: ProjectModalData
+  project: ProjectData
   onClose: () => void
 }
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const [activeSlide, setActiveSlide] = useState(0)
-  const [isPortraitSlide, setIsPortraitSlide] = useState(false)
   const { t } = useLanguage()
 
   const media = project.media ?? []
   const hasMedia = media.length > 0
   const slideCount = hasMedia ? media.length : 1
-
-  useEffect(() => {
-    setIsPortraitSlide(false)
-  }, [activeSlide])
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
@@ -56,15 +34,12 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   return createPortal(
     <div className="project-modal-overlay" onClick={onClose}>
-      <div
-        className={`project-modal ${isPortraitSlide ? 'is-portrait' : ''}`}
-        onClick={(e) => e.stopPropagation()}
-      >
+      <div className="project-modal" onClick={(e) => e.stopPropagation()}>
         <button className="project-modal-close" onClick={onClose} aria-label="Close">
           ✕
         </button>
 
-        <div className={`modal-carousel ${isPortraitSlide ? 'is-portrait' : ''}`}>
+        <div className="modal-carousel">
           {hasMedia ? (
             media[activeSlide].type === 'video' ? (
               <video
@@ -80,10 +55,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 className="modal-slide modal-slide-image"
                 src={media[activeSlide].src}
                 alt={media[activeSlide].alt ?? t(project.titleKey)}
-                onLoad={(event) => {
-                  const image = event.currentTarget
-                  setIsPortraitSlide(image.naturalHeight > image.naturalWidth)
-                }}
               />
             ) : (
               <div

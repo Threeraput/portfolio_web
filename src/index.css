@@ -832,10 +832,6 @@ section {
   box-shadow: var(--shadow-lg);
 }
 
-.project-modal.is-portrait {
-  max-width: 560px;
-}
-
 .project-modal-close {
   position: absolute;
   top: 12px;
@@ -858,21 +854,13 @@ section {
 
 .modal-carousel {
   position: relative;
-  height: 480px;
+  height: min(68vh, 680px);
   background: var(--bg-alt, var(--surface));
   padding: 14px;
 }
 
-.modal-carousel.is-portrait {
-  height: min(68vh, 680px);
-}
-
 @media (max-width: 768px) {
   .modal-carousel {
-    height: 300px;
-  }
-
-  .modal-carousel.is-portrait {
     height: min(68vh, 560px);
   }
 }
