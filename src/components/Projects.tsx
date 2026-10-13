@@ -115,7 +115,13 @@ export default function Projects() {
                     ))}
                   </div>
                   <div className="project-actions">
-                    <a href="#" className="btn btn-ghost btn-sm" onClick={(e) => e.stopPropagation()}>
+                    <a
+                      href={project.githubUrl ?? '#'}
+                      target={project.githubUrl ? '_blank' : undefined}
+                      rel={project.githubUrl ? 'noopener noreferrer' : undefined}
+                      className="btn btn-ghost btn-sm"
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       <svg
                         width="16"
                         height="16"
@@ -126,7 +132,13 @@ export default function Projects() {
                       </svg>
                       GitHub
                     </a>
-                    <a href="#" className="btn btn-primary btn-sm" onClick={(e) => e.stopPropagation()}>
+                    <a
+                      href={project.demoUrl ?? '#'}
+                      target={project.demoUrl ? '_blank' : undefined}
+                      rel={project.demoUrl ? 'noopener noreferrer' : undefined}
+                      className="btn btn-primary btn-sm"
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       <span>{t('projects.liveDemo')}</span>
                     </a>
                   </div>

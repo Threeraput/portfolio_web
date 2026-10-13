@@ -18,4 +18,6 @@ export type ProjectData = {
   coverImage?: string
   coverFit?: 'contain' | 'cover'
   media?: ProjectMedia[]
+  githubUrl?: string
+  demoUrl?: string
 }

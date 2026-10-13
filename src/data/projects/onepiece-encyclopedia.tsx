@@ -51,6 +51,8 @@ const onepieceEncyclopedia: ProjectData = {
   coverImage: '/onepiece_encyclopedia_project/Screenshot 2026-10-13 155518.png',
   coverFit: 'cover',
   media: screenshots,
+  githubUrl: 'https://github.com/Threeraput/OnepieceCharacterEncyclopedia',
+  demoUrl: 'https://onepiece-character-encyclopedia.vercel.app/',
 }
 
 export default onepieceEncyclopedia
