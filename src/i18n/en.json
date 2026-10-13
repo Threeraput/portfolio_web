@@ -97,7 +97,7 @@
       },
       "stockPrediction": {
         "title": "Stock Price Prediction",
-        "description": "A regression-based model that forecasts short-term stock price movement from historical market data."
+        "description": "Analyzes 2010–2024 data for the S&P 500, NASDAQ, and commodities, then uses Linear Regression with OHLCV features to estimate S&P 500 closing prices. Matplotlib charts visualize price trends, asset growth, and correlations; the project also evaluates the model with time-series cross-validation and explores asset clusters with K-Means and PCA."
       },
       "onepieceEncyclopedia": {
         "title": "One Piece Character Encyclopedia",
