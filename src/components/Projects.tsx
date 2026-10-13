@@ -90,8 +90,19 @@ export default function Projects() {
                   style={{ background: project.bgGradient }}
                 >
                   {coverImage ? (
-                    <img className="project-shot-image" src={coverImage} alt="" />
-                  ) : project.icon}
+                    <img
+                      className="project-shot-image"
+                      style={
+                        project.coverFit
+                          ? { objectFit: project.coverFit, objectPosition: 'top' }
+                          : undefined
+                      }
+                      src={coverImage}
+                      alt=""
+                    />
+                  ) : (
+                    project.icon
+                  )}
                 </div>
                 <div className="project-body">
                   <h3>{t(project.titleKey)}</h3>

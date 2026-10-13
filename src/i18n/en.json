@@ -99,9 +99,16 @@
         "title": "Stock Price Prediction",
         "description": "A regression-based model that forecasts short-term stock price movement from historical market data."
       },
-      "taskDashboard": {
-        "title": "Team Task Dashboard",
-        "description": "A web dashboard for managing team tasks with real-time status updates and progress tracking."
+      "onepieceEncyclopedia": {
+        "title": "One Piece Character Encyclopedia",
+        "description": "An interactive web encyclopedia showcasing One Piece characters, bounty archives, crew collections, and detailed profile analytics.",
+        "role": "Frontend Developer · Web Development",
+        "highlights": {
+          "bountyArchive": "Bounty archive with real-time character search, status filters (alive, deceased, with bounties), and highest bounty ranking.",
+          "characterDetail": "Interactive profile modal featuring Romanized names, ages, heights, blood types, birthdays, and bounty values.",
+          "savedCrew": "Saved Crew collection feature allowing users to bookmark and curate their personal pirate crew.",
+          "interactiveViews": "Dynamic view toggle between an immersive card grid and a comprehensive character archive list."
+        }
       },
       "chatSupport": {
         "title": "Live Chat Support Widget",

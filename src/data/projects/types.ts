@@ -16,5 +16,6 @@ export type ProjectData = {
   roleKey?: string
   highlightsKeys?: string[]
   coverImage?: string
+  coverFit?: 'contain' | 'cover'
   media?: ProjectMedia[]
 }
