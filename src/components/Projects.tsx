@@ -132,15 +132,17 @@ export default function Projects() {
                       </svg>
                       GitHub
                     </a>
-                    <a
-                      href={project.demoUrl ?? '#'}
-                      target={project.demoUrl ? '_blank' : undefined}
-                      rel={project.demoUrl ? 'noopener noreferrer' : undefined}
-                      className="btn btn-primary btn-sm"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <span>{t('projects.liveDemo')}</span>
-                    </a>
+                    {project.demoUrl && (
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-primary btn-sm"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <span>{t('projects.liveDemo')}</span>
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

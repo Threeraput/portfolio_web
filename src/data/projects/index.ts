@@ -9,10 +9,10 @@ import type { ProjectData } from './types'
 export type { ProjectData, ProjectMedia } from './types'
 
 export const projects: ProjectData[] = [
+  onepieceEncyclopedia,
   faceAttendance,
   transcriptChecker,
   stockPrediction,
-  onepieceEncyclopedia,
   chatSupport,
   sentimentAnalysis,
 ]
