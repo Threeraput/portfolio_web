@@ -24,7 +24,7 @@
     "eyebrow": "About Me",
     "title": "From Idea to Production",
     "bio1": "I'm a Computer Science graduate from Kasetsart University, Kamphaeng Saen Campus, with hands-on software engineering experience gained through cooperative education. I enjoy working across the stack — designing intuitive front-ends, building dependable APIs, and shipping mobile apps that people actually use.",
-    "bio2": "My recent work spans a real-time face attendance system, a mobile transcript checker, and a machine-learning stock price prediction model — each one an exercise in turning a practical problem into a working product.",
+    "bio2": "My recent work spans a real-time face attendance system, an online bookstore system, and a machine-learning stock price prediction model — each one an exercise in turning a practical problem into a working product.",
     "status": "Open to work",
     "cards": {
       "education": {
@@ -91,9 +91,17 @@
           "security": "Role-based access, JWT authentication, bcrypt password hashing, and email OTP protect account workflows."
         }
       },
-      "transcriptChecker": {
-        "title": "Transcript Checker Application",
-        "description": "A mobile app that helps students validate their academic transcripts and track graduation requirements offline."
+      "bookstore": {
+        "title": "Bookstore Web Application (Emerald Library)",
+        "description": "A full-stack book inventory app built with NestJS, TypeORM, PostgreSQL, and Next.js. It fetches book covers automatically from the Open Library ISBN API and uses a clean white and emerald green design.",
+        "role": "Full-Stack Developer · Frontend & Backend",
+        "highlights": {
+          "catalog": "Real-time live search by title or ISBN, with instant category and author filters.",
+          "openLibrary": "Open Library cover fetcher pulls covers from an ISBN and falls back to a generated SVG cover when none exists.",
+          "admin": "Admin management with JWT login to add, view, and delete books.",
+          "backend": "NestJS backend with a 3-layer architecture, 5 related tables, TypeORM migrations, bcrypt password hashing, and JwtAuthGuard-protected routes.",
+          "ui": "Custom confirmation modals instead of alert() and confirm(), and a fully responsive layout for mobile, tablet, and desktop."
+        }
       },
       "stockPrediction": {
         "title": "Stock Price Prediction",
