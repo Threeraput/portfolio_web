@@ -61,6 +61,7 @@ const stockPrediction: ProjectData = {
   descriptionKey: 'projects.items.stockPrediction.description',
   stack: ['Python', 'Regression Modeling', 'Pandas', 'Matplotlib'],
   media: screenshots,
+  githubUrl: 'https://github.com/Threeraput/datasci_regression_project',
 }
 
 export default stockPrediction

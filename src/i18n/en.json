@@ -24,7 +24,7 @@
     "eyebrow": "About Me",
     "title": "From Idea to Production",
     "bio1": "I'm a Computer Science graduate from Kasetsart University, Kamphaeng Saen Campus, with hands-on software engineering experience gained through cooperative education. I enjoy working across the stack — designing intuitive front-ends, building dependable APIs, and shipping mobile apps that people actually use.",
-    "bio2": "My recent work spans a real-time face attendance system, an online bookstore system, and a machine-learning stock price prediction model — each one an exercise in turning a practical problem into a working product.",
+    "bio2": "I care about writing clean, maintainable code and turning practical problems into working products — and I'm always learning new tools and technologies to do it better.",
     "status": "Open to work",
     "cards": {
       "education": {
@@ -126,16 +126,16 @@
     "description": "Practical software engineering experience gained through cooperative education.",
     "items": {
       "coop": {
-        "period": "Cooperative Education",
-        "title": "Software Engineer (Co-op)",
-        "company": "[Company Name] · Full Stack & Mobile Development",
-        "description": "Contributed to full-stack and mobile application development, working across front-end interfaces, back-end services, and databases within a team environment."
+        "period": "Dec 2025 – Mar 2026",
+        "title": "Software Engineer (Co-operative Education)",
+        "company": "Gosoft (Thailand) Co., Ltd.",
+        "description": "Developed a full stack web application for enterprise-level resource and business management.\nBuilt responsive user interfaces and interactive components using React, TypeScript, and Tailwind CSS.\nDesigned RESTful APIs and managed databases using NestJS, PostgreSQL, and TypeORM."
       },
       "degree": {
         "period": "2020 – 2024",
-        "title": "B.Sc. Computer Science",
+        "title": "Bachelor of Science, Computer Science",
         "company": "Kasetsart University, Kamphaeng Saen Campus",
-        "description": "Studied core computer science fundamentals with a focus on software engineering, culminating in a machine-learning stock prediction project."
+        "description": "Faculty of Liberal Arts and Science\nGPA: 3.20"
       }
     }
   },

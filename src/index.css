@@ -1625,3 +1625,12 @@ footer {
 .cert-modal {
   overscroll-behavior: contain;
 }
+
+.timeline-list {
+  display: grid;
+  gap: 6px;
+  padding-left: 18px;
+  list-style: disc;
+  font-size: 14.5px;
+  color: var(--subtext);
+}

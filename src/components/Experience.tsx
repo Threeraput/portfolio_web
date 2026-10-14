@@ -54,9 +54,11 @@ export default function Experience() {
                 <h4>
                   {t(exp.companyKey)}
                 </h4>
-                <p>
-                  {t(exp.descriptionKey)}
-                </p>
+                <ul className="timeline-list">
+                  {t(exp.descriptionKey).split('\n').map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
