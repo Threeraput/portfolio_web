@@ -269,9 +269,11 @@ section {
   display: flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap;
 }
 
 .logo-mark {
+  flex-shrink: 0;
   width: 34px;
   height: 34px;
   border-radius: 10px;
@@ -1545,5 +1547,74 @@ footer {
   .footer-inner {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  .container {
+    padding: 0 16px;
+  }
+  .section-head {
+    margin-bottom: 36px;
+  }
+  .nav-actions {
+    gap: 6px;
+  }
+  .logo {
+    gap: 8px;
+    font-size: 15px;
+  }
+  .lang-toggle button {
+    padding: 6px 9px;
+  }
+  .icon-btn,
+  .burger {
+    width: 36px;
+    height: 36px;
+  }
+  .hero {
+    padding: calc(var(--nav-h) + 40px) 0 56px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-actions .btn {
+    justify-content: center;
+  }
+  .hero-meta {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .filter-bar {
+    flex-wrap: wrap;
+  }
+  .timeline-item {
+    padding-left: 44px;
+  }
+  .timeline-card {
+    padding: 18px;
+  }
+  .project-modal-overlay,
+  .cert-modal-overlay {
+    padding: 10px;
+  }
+  .modal-carousel {
+    height: min(50vh, 420px);
+    padding: 8px;
+  }
+  .modal-nav-btn {
+    width: 34px;
+    height: 34px;
+  }
+  .modal-body {
+    padding: 18px 16px 20px;
+  }
+  .contact-link {
+    word-break: break-word;
   }
 }
