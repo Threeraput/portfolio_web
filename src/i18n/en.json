@@ -117,14 +117,6 @@
           "savedCrew": "Saved Crew collection feature allowing users to bookmark and curate their personal pirate crew.",
           "interactiveViews": "Dynamic view toggle between an immersive card grid and a comprehensive character archive list."
         }
-      },
-      "chatSupport": {
-        "title": "Live Chat Support Widget",
-        "description": "An embeddable customer support chat widget with real-time messaging and ticket history."
-      },
-      "sentimentAnalysis": {
-        "title": "Sentiment Analysis Tool",
-        "description": "An NLP tool that classifies customer review sentiment to surface product feedback trends."
       }
     }
   },
