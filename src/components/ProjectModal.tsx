@@ -17,6 +17,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const slideCount = hasMedia ? media.length : 1
 
   useEffect(() => {
+    document.documentElement.style.overflow = 'hidden'
     document.body.style.overflow = 'hidden'
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
@@ -25,6 +26,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => {
+      document.documentElement.style.overflow = ''
       document.body.style.overflow = ''
       window.removeEventListener('keydown', handleKeyDown)
     }

@@ -29,6 +29,7 @@ export default function CertificateModal({
   const goTo = (index: number) => onNavigate((index + certificates.length) % certificates.length)
 
   useEffect(() => {
+    document.documentElement.style.overflow = 'hidden'
     document.body.style.overflow = 'hidden'
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
@@ -37,6 +38,7 @@ export default function CertificateModal({
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => {
+      document.documentElement.style.overflow = ''
       document.body.style.overflow = ''
       window.removeEventListener('keydown', handleKeyDown)
     }

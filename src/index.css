@@ -1618,3 +1618,10 @@ footer {
     word-break: break-word;
   }
 }
+
+.project-modal-overlay,
+.cert-modal-overlay,
+.project-modal,
+.cert-modal {
+  overscroll-behavior: contain;
+}
