@@ -70,6 +70,7 @@ const faceAttendance: ProjectData = {
     'Firebase',
   ],
   coverImage: '/face_project/face-scan.png',
+  githubUrl: 'https://github.com/Threeraput/Fast_Check',
   media: screenshots,
 }
 
